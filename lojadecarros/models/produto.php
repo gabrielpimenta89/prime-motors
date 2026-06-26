@@ -21,11 +21,16 @@ class Produto
     public function buscarPorId(int $id): ?array
     {
         $stmt = $this->conn->prepare("
-            SELECT * FROM carros WHERE id_carro = :id
+            SELECT * FROM carros
+            WHERE id_carro = :id
         ");
-        $stmt->execute([':id' => $id]);
+
+        $stmt->execute([
+            ':id' => $id
+        ]);
 
         $carro = $stmt->fetch(PDO::FETCH_ASSOC);
+
         return $carro ?: null;
     }
 
@@ -37,23 +42,44 @@ class Produto
         ?string $cor,
         ?string $combustivel,
         ?int $km,
-        string $chassi
+        string $chassi,
+        float $preco
     ): int {
+
         $stmt = $this->conn->prepare("
-            INSERT INTO carros 
-            (marca, modelo, ano, cor, combustivel, km, n_chassi)
-            VALUES 
-            (:marca, :modelo, :ano, :cor, :combustivel, :km, :chassi)
+            INSERT INTO carros
+            (
+                marca,
+                modelo,
+                ano,
+                cor,
+                combustivel,
+                km,
+                n_chassi,
+                preco
+            )
+            VALUES
+            (
+                :marca,
+                :modelo,
+                :ano,
+                :cor,
+                :combustivel,
+                :km,
+                :chassi,
+                :preco
+            )
         ");
 
         $stmt->execute([
-            ':marca' => $marca,
-            ':modelo' => $modelo,
-            ':ano' => $ano,
-            ':cor' => $cor,
-            ':combustivel' => $combustivel,
-            ':km' => $km,
-            ':chassi' => $chassi
+            ':marca'        => $marca,
+            ':modelo'       => $modelo,
+            ':ano'          => $ano,
+            ':cor'          => $cor,
+            ':combustivel'  => $combustivel,
+            ':km'           => $km,
+            ':chassi'       => $chassi,
+            ':preco'        => $preco
         ]);
 
         return (int)$this->conn->lastInsertId();
@@ -68,8 +94,10 @@ class Produto
         ?string $cor,
         ?string $combustivel,
         ?int $km,
-        string $chassi
+        string $chassi,
+        float $preco
     ): void {
+
         $stmt = $this->conn->prepare("
             UPDATE carros SET
                 marca = :marca,
@@ -78,19 +106,21 @@ class Produto
                 cor = :cor,
                 combustivel = :combustivel,
                 km = :km,
-                n_chassi = :chassi
+                n_chassi = :chassi,
+                preco = :preco
             WHERE id_carro = :id
         ");
 
         $stmt->execute([
-            ':id' => $id,
-            ':marca' => $marca,
-            ':modelo' => $modelo,
-            ':ano' => $ano,
-            ':cor' => $cor,
-            ':combustivel' => $combustivel,
-            ':km' => $km,
-            ':chassi' => $chassi
+            ':id'           => $id,
+            ':marca'        => $marca,
+            ':modelo'       => $modelo,
+            ':ano'          => $ano,
+            ':cor'          => $cor,
+            ':combustivel'  => $combustivel,
+            ':km'           => $km,
+            ':chassi'       => $chassi,
+            ':preco'        => $preco
         ]);
     }
 
@@ -98,8 +128,12 @@ class Produto
     public function deletar(int $id): bool
     {
         $stmt = $this->conn->prepare("
-            DELETE FROM carros WHERE id_carro = :id
+            DELETE FROM carros
+            WHERE id_carro = :id
         ");
-        return $stmt->execute([':id' => $id]);
+
+        return $stmt->execute([
+            ':id' => $id
+        ]);
     }
 }

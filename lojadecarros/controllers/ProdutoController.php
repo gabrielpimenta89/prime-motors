@@ -33,8 +33,14 @@ class ProdutoController
         $combustivel = trim($_POST['combustivel'] ?? '');
         $km = (int)($_POST['km'] ?? 0);
         $chassi = trim($_POST['n_chassi'] ?? '');
+        $preco = (float)($_POST['preco'] ?? 0);
 
-        if ($marca === "" || $modelo === "" || $ano <= 0) {
+        if (
+            $marca === "" ||
+            $modelo === "" ||
+            $ano <= 0 ||
+            $preco <= 0
+        ) {
             die("Dados inválidos.");
         }
 
@@ -42,11 +48,26 @@ class ProdutoController
 
         if ($id > 0) {
             $produtoModel->atualizar(
-                $id, $marca, $modelo, $ano, $cor, $combustivel, $km, $chassi
+                $id,
+                $marca,
+                $modelo,
+                $ano,
+                $cor,
+                $combustivel,
+                $km,
+                $chassi,
+                $preco
             );
         } else {
             $produtoModel->inserir(
-                $marca, $modelo, $ano, $cor, $combustivel, $km, $chassi
+                $marca,
+                $modelo,
+                $ano,
+                $cor,
+                $combustivel,
+                $km,
+                $chassi,
+                $preco
             );
         }
 

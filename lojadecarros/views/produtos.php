@@ -80,6 +80,19 @@ value="<?= $editar['km'] ?? '' ?>">
 value="<?= $editar['n_chassi'] ?? '' ?>">
 </div>
 
+<!-- NOVO CAMPO -->
+<div class="form-group">
+<label>Preço (R$)</label>
+<input
+    class="input"
+    type="number"
+    name="preco"
+    step="0.01"
+    min="0"
+    required
+    value="<?= $editar['preco'] ?? '' ?>">
+</div>
+
 <div class="actions">
 <button class="btn btn-primary" type="submit">Salvar</button>
 <a class="btn" href="index.php?controller=produto&action=index">Limpar</a>
@@ -101,6 +114,7 @@ value="<?= $editar['n_chassi'] ?? '' ?>">
 <th>Ano</th>
 <th>Cor</th>
 <th>KM</th>
+<th>Preço</th>
 <th>Ações</th>
 </tr>
 </thead>
@@ -113,7 +127,8 @@ value="<?= $editar['n_chassi'] ?? '' ?>">
 <td><?= htmlspecialchars($p['modelo']) ?></td>
 <td><?= $p['ano'] ?></td>
 <td><?= htmlspecialchars($p['cor']) ?></td>
-<td><?= $p['km'] ?></td>
+<td><?= number_format($p['km'], 0, ',', '.') ?></td>
+<td>R$ <?= number_format($p['preco'], 2, ',', '.') ?></td>
 
 <td>
 <a class="btn"
@@ -135,5 +150,6 @@ Excluir
 </div>
 
 </div>
+
 </body>
 </html>
