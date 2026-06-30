@@ -1,0 +1,249 @@
+/* ==========================
+   PRIME MOTORS - BLACK EDITION
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:#fff;
+}
+
+/* Container */
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* Header */
+
+.header{
+    background:#000;
+    border-bottom:2px solid #fff;
+    padding:18px 0;
+}
+
+.header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-header{
+    height:150px;
+}
+
+.badge{
+    margin-left:15px;
+    background:#fff;
+    color:#000;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* Layout */
+
+.grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:25px;
+    margin-top:35px;
+}
+
+/* Cards */
+
+.card{
+    background:#181818;
+    border:1px solid #444;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 0 20px rgba(255,255,255,.08);
+}
+
+.card h2{
+    margin-bottom:20px;
+    color:#fff;
+    border-bottom:1px solid #555;
+    padding-bottom:10px;
+}
+
+/* Form */
+
+.form-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#ddd;
+    font-size:14px;
+}
+
+.input{
+    width:100%;
+    padding:12px;
+    border:1px solid #555;
+    background:#111;
+    color:#fff;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.input:focus{
+    outline:none;
+    border-color:#fff;
+    box-shadow:0 0 10px rgba(255,255,255,.3);
+}
+
+/* Botões */
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn{
+    padding:10px 18px;
+    text-decoration:none;
+    border-radius:8px;
+    border:1px solid white;
+    color:white;
+    background:transparent;
+    cursor:pointer;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+}
+
+.btn-primary{
+    background:white;
+    color:black;
+    font-weight:bold;
+}
+
+.btn-primary:hover{
+    background:#d9d9d9;
+}
+
+.btn-danger{
+    background:#c62828;
+    border:1px solid #c62828;
+    color:#fff;
+    font-weight:bold;
+}
+
+.btn-danger:hover{
+    background:#8e0000;
+    border-color:#8e0000;
+    color:#fff;
+    transform:translateY(-2px);
+}
+/* Tabela */
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.table th{
+    background:#000;
+    color:white;
+    padding:15px;
+    border:1px solid #555;
+}
+
+.table td{
+    padding:15px;
+    border:1px solid #333;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table tr:nth-child(even){
+    background:#151515;
+}
+
+.table tr:hover{
+    background:#222;
+}
+
+/* Imagens */
+
+.table img{
+    width:90px;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+    border:2px solid white;
+}
+
+#previewImagem{
+    margin-top:15px;
+    width:180px;
+    border-radius:10px;
+    border:2px solid white;
+}
+
+/* Scroll */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#fff;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ccc;
+}
+
+/* Responsivo */
+
+@media(max-width:1000px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.table{
+    display:block;
+    overflow-x:auto;
+}
+
+.logo-header{
+    height:50px;
+}
+
+.header-inner{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
