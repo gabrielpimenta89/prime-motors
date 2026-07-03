@@ -97,7 +97,7 @@ O projeto conta com um sistema de Dashboard, onde o usuário pode observar infor
    http://localhost/lojadecarros/
 
 
-   # Design gráfico do projeto
+   ## Design gráfico do projeto
    
 **Link do Figma:** https://www.figma.com/design/2HY0jdxfStztz666lqyh8U/Figma-basics?node-id=1825-2&t=LquJCY0a1Si0TnVB-1
 
