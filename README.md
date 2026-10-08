@@ -1,5 +1,5 @@
 [README (1).md](https://github.com/user-attachments/files/29615930/README.1.md)
-# **Prime Motors -  Sistema web de Loja de Carros 🚗**
+# **Montclair Motors -  Sistema web de Loja de Carros de Luxo 🚗**
 
 Sistema web desenvolvido em PHP utilizando padrão de arquitetura MVC (MODELS-VIEWS-CONTROLLERS) para gerenciamento de uma loja de carros.
 
@@ -49,7 +49,7 @@ O projeto conta com um sistema de Dashboard, onde o usuário pode observar infor
 
 **HTML5**
 
-**CSS3**
+**CSS**
 
 **XAMPP**
 
@@ -57,7 +57,7 @@ O projeto conta com um sistema de Dashboard, onde o usuário pode observar infor
 
 **Figma**
 
-**Excalidraw**
+**PlantUML**
 
 ## 🚀 Como executar o projeto
 
@@ -104,12 +104,6 @@ O projeto conta com um sistema de Dashboard, onde o usuário pode observar infor
 
    ## 👨‍💻 Desenvolvedores
 
-   **Eduardo Cavalcante Marques Santos**
-
    **Gabriel Araújo Pimenta Vieira**
 
-   **Bryan Isaac Ribeiro Moura**
-
    **Kauã Gustavo Rodrigues de Oliveira**
-
-   **Gustavo Furtado de Souza e Silva**
