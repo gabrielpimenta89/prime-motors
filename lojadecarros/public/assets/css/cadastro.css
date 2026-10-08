@@ -1,0 +1,178 @@
+/* cadastro.css — Cadastro de Vendedor | Prime Motors (azul, branco e prata)
+   Estilizado para a estrutura original do HTML: .container > img.logo, h2, form > div > label + input, button */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap");
+
+:root {
+    --fundo: #02050d;
+    --card: #030914;
+    --azul: #0088f5;
+    --azul-claro: #3aa5ff;
+    --borda-card: rgba(0, 136, 245, 0.35);
+    --campo: #cddae8;
+    --campo-texto: #0b1424;
+    --placeholder: #7a899d;
+    --texto: #e9eef6;
+    --prata: #8a98ad;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+    color: var(--texto);
+    background:
+        radial-gradient(ellipse 60% 45% at 50% 50%, rgba(0, 70, 160, 0.14), transparent 70%),
+        var(--fundo);
+}
+
+/* ---------- Card ---------- */
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 44px 44px 40px;
+    background: var(--card);
+    border: 1px solid var(--borda-card);
+    border-radius: 20px;
+    box-shadow:
+        0 0 45px rgba(0, 136, 245, 0.12),
+        0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Logo e título ---------- */
+.logo {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 18px;
+    object-fit: contain;
+}
+
+h2 {
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    color: var(--texto);
+    border-bottom: 1px solid rgba(0, 136, 245, 0.3);
+}
+
+/* ---------- Formulário ---------- */
+form {
+    width: 100%;
+}
+
+form > div {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px 0 44px;
+    background-color: var(--campo);
+    background-repeat: no-repeat;
+    background-position: 14px center;
+    background-size: 18px 18px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--campo-texto);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: var(--placeholder);
+}
+
+input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(0, 136, 245, 0.3);
+}
+
+/* ícones dentro dos campos (por tipo) */
+input[type="text"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4'/><path d='M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1'/></svg>");
+}
+
+input[type="email"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='m3 7 9 6 9-6'/></svg>");
+}
+
+input[type="password"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='11' width='16' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/><circle cx='12' cy='16' r='1'/></svg>");
+}
+
+/* autopreenchimento do navegador */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px var(--campo) inset;
+    -webkit-text-fill-color: var(--campo-texto);
+}
+
+/* ---------- Botão ---------- */
+button {
+    width: 100%;
+    height: 48px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--azul);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 26px rgba(0, 136, 245, 0.35);
+    transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 32px rgba(0, 136, 245, 0.5);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--azul-claro);
+    outline-offset: 3px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 520px) {
+    .container {
+        padding: 34px 22px 30px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}
